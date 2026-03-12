@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #6366F1;
+  --color-bg-deep: #0f0f11;
+  --color-bg-slate: #1e1e2d;
+  --font-sans: "Inter", "Geist", system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  background-color: var(--color-bg-deep);
+  color: white;
+}
+
+:root {
+  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+  
+  --color-bg-canvas: #09090B;
+  --color-bg-panel: #121214;
+  --color-bg-card: #1C1C1F;
+  --color-bg-card-hover: #252529;
+  
+  --color-border-subtle: #2D2D30;
+  
+  --color-accent-indigo: #6366F1;
+  --color-accent-indigo-hover: #4F46E5;
+  --color-text-primary: #F4F4F5;
+  --color-text-secondary: #A1A1AA;
+}
+
+@keyframes flow-anim {
+  from { stroke-dashoffset: 24; }
+  to { stroke-dashoffset: 0; }
+}
+
+.flow-edge-anim {
+  stroke-dasharray: 4 4;
+  animation: flow-anim 1s linear infinite;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.mesh-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
+}
+
+.glass {
+  background: rgba(30, 30, 45, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
