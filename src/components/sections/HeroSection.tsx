@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Download, ChevronRight } from 'lucide-react';
-
+import { DOWNLOAD_URL } from '../../constants';
 interface HeroSectionProps {
   fadeInUp: any;
   spring: any;
@@ -45,14 +45,16 @@ export const HeroSection = ({ fadeInUp, spring }: HeroSectionProps) => {
         transition={{ ...spring, delay: 0.5 }}
         className="flex flex-col items-center gap-4"
       >
-        <button 
+        <motion.a 
           id="download"
-          className="group relative px-10 py-6 bg-brand hover:bg-indigo-600 rounded-[2rem] flex items-center gap-3 font-black text-xl transition-all duration-300 shadow-[0_20px_50px_-15px_rgba(99,102,241,0.6)] transform hover:-translate-y-2 active:scale-95"
+          href={DOWNLOAD_URL}
+          download
+          className="pointer group relative px-10 py-6 bg-brand hover:bg-indigo-600 rounded-[2rem] flex items-center gap-3 font-black text-xl transition-all duration-300 shadow-[0_20px_50px_-15px_rgba(99,102,241,0.6)] transform hover:-translate-y-2 active:scale-95"
         >
-          <Download size={28} />
+          <Download size={24} />
           Download .exe
           <ChevronRight size={24} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-        </button>
+        </motion.a>
         <span className="text-xs text-gray-500 font-mono tracking-widest uppercase">
           v1.0.2 | Native Rust Engine
         </span>

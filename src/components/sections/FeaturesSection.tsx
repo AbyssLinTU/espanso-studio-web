@@ -16,7 +16,7 @@ export const FeaturesSection = ({ fadeInUp }: FeaturesSectionProps) => {
            {...fadeInUp}
            className="md:col-span-8 md:row-span-2 glass rounded-[2.5rem] p-4 overflow-hidden group border border-white/5 relative bg-[#09090B]"
         >
-          <BlueprintMockup fadeInUp={fadeInUp} />
+          <BlueprintMockup />
         </motion.div>
 
         {/* Smaller Detailed Feature Cards */}

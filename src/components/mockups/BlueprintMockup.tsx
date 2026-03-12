@@ -1,10 +1,9 @@
-import { Layers, Search, Plus, Eye } from 'lucide-react';
+import { Layers, Plus, Eye } from 'lucide-react';
 
 interface BlueprintMockupProps {
-  fadeInUp: any;
 }
 
-export const BlueprintMockup = ({ fadeInUp }: BlueprintMockupProps) => {
+export const BlueprintMockup = ({ }: BlueprintMockupProps) => {
   return (
     <div className="w-full h-full rounded-2xl overflow-hidden border border-[#2D2D30] bg-[#09090B] flex shadow-2xl">
       {/* Sidebar Mockup */}

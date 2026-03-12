@@ -6,6 +6,8 @@ import { Footer } from './components/common/Footer';
 import { HeroSection } from './components/sections/HeroSection';
 import { FeaturesSection } from './components/sections/FeaturesSection';
 
+import { DOWNLOAD_URL } from './constants';
+
 const App = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -20,6 +22,7 @@ const App = () => {
   };
 
   return (
+    
     <div className="relative min-h-screen bg-[#0f0f11] text-white font-sans selection:bg-brand/30 overflow-x-hidden">
       {/* Dynamic Graph Effect Background */}
       <ParticleNetwork />
@@ -44,13 +47,15 @@ const App = () => {
 
       {/* Mobile Fixed Download Button */}
       <div className="md:hidden fixed bottom-6 left-6 right-6 z-50">
-        <motion.button 
+        <motion.a 
+          href={DOWNLOAD_URL}
+          download
           whileTap={{ scale: 0.95 }}
-          className="w-full bg-brand py-4 rounded-xl flex items-center justify-center gap-3 font-bold shadow-2xl shadow-brand/40"
+          className="pointer w-full bg-brand py-4 rounded-xl flex items-center justify-center gap-3 font-bold shadow-2xl shadow-brand/40 no-underline text-white"
         >
           <Download size={20} />
           Download .exe
-        </motion.button>
+        </motion.a>
       </div>
     </div>
   );
