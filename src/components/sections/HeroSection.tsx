@@ -49,7 +49,9 @@ export const HeroSection = ({ fadeInUp, spring }: HeroSectionProps) => {
           id="download"
           href={DOWNLOAD_URL}
           download
-          className="pointer group relative px-10 py-6 bg-brand hover:bg-indigo-600 rounded-[2rem] flex items-center gap-3 font-black text-xl transition-all duration-300 shadow-[0_20px_50px_-15px_rgba(99,102,241,0.6)] transform hover:-translate-y-2 active:scale-95"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="pointer group relative px-10 py-6 bg-brand hover:bg-indigo-600 rounded-[2rem] flex items-center gap-3 font-black text-xl transition-all duration-300 shadow-[0_20px_50px_-15px_rgba(99,102,241,0.6)]"
         >
           <Download size={24} />
           Download .exe
