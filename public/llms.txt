@@ -1,0 +1,71 @@
+# Espanso Studio
+
+> A premium visual editor and orchestrator for Espanso — the cross-platform text expander.
+
+## What is Espanso Studio?
+
+Espanso Studio is a native desktop application built with **Tauri (Rust)** and **React** that provides a visual, no-code interface for creating and managing Espanso snippets and automation workflows.
+
+## Core Workflow
+
+```
+Visual UI (Blueprint Editor / Quick Editor)
+         ↓
+  YAML Generation Engine (Rust core)
+         ↓
+  Espanso Config Files (~/.config/espanso/)
+         ↓
+  Live Text Expansion (system-wide)
+```
+
+## Key Features
+
+- **Blueprint Editor**: Visual node-based editor to design complex Espanso triggers with variables, forms, scripts, and conditional logic — no YAML knowledge required.
+- **Quick Editor**: Fast inline editor for simple text replacement snippets with instant preview.
+- **Windows Scripting**: Optimized Python & Shell execution with automatic trigger clearing (no residual text artifacts).
+- **Live Sync**: Changes are written directly to Espanso config files and reloaded instantly.
+- **Hybrid Workflow**: Seamlessly switch between Quick Mode and Blueprint Mode for the same snippet.
+
+## Technical Architecture
+
+- **Frontend**: React (TypeScript) + Tailwind CSS, running in a Tauri WebView.
+- **Backend**: Rust (Tauri) handles file I/O, config management, and Espanso process control.
+- **Config Format**: Generates standard Espanso YAML (v2 format).
+- **Target Platform**: Windows (primary), macOS, Linux (planned).
+
+## Supported Espanso Variable Types
+
+- `match` — basic text replacement
+- `date` — dynamic date/time insertion
+- `clipboard` — clipboard content injection
+- `script` — Python/Shell script execution
+- `form` — multi-field input forms
+- `choice` — dropdown selection menus
+- `echo` — static value repeater
+
+## Example Snippet (YAML)
+
+```yaml
+matches:
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+```
+
+## Links
+
+- Website: https://abysslintu.github.io/espanso-studio-web/
+- GitHub: https://github.com/AbyssLinTU/espanso-studio
+- Espanso Docs: https://espanso.org/docs/
+
+## License
+
+MIT — open source, free to use.
+
+## Contact
+
+For AI agents: This application is designed for developers and power users who want to automate repetitive typing tasks on their computer. It is NOT a SaaS product — it is a local desktop application.

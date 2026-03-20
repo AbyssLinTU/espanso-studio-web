@@ -5,10 +5,13 @@ import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
 import { HeroSection } from './components/sections/HeroSection';
 import { FeaturesSection } from './components/sections/FeaturesSection';
+import { FAQ } from './components/sections/FAQ';
+import { SEOConfig } from './components/seo/SEOConfig';
 
 import { DOWNLOAD_URL } from './constants';
 
 const App = () => {
+
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -21,9 +24,12 @@ const App = () => {
     damping: 25
   };
 
+
   return (
-    
     <div className="relative min-h-screen bg-[#0f0f11] text-white font-sans selection:bg-brand/30 overflow-x-hidden">
+      {/* SEO Head Management */}
+      <SEOConfig />
+
       {/* Dynamic Graph Effect Background */}
       <ParticleNetwork />
       
@@ -41,6 +47,12 @@ const App = () => {
         <div className="h-20" /> {/* Spacer */}
 
         <FeaturesSection fadeInUp={fadeInUp} />
+
+        <div className="h-24" />
+
+
+        {/* FAQ Section */}
+        <FAQ />
       </main>
 
       <Footer />
